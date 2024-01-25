@@ -1,0 +1,20 @@
+@use 'base/variables';
+@use 'base/mixins';
+
+.header{
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    &__logo{
+        width: 30rem;
+        @include mixins.tablet { 
+            width: 30%;
+        }
+    }
+    @include mixins.tablet { 
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
