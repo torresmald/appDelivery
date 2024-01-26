@@ -1,0 +1,39 @@
+@use "base/variables";
+@use "base/mixins";
+.pasos {
+  &__contenido {
+    background-color: variables.$primario;
+    color: variables.$blanco;
+    text-align: center;
+    span {
+      display: block;
+      font-size: 1.4rem;
+    }
+  }
+  &__grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include mixins.tablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__paso {
+    img {
+      height: 30rem;
+    }
+    @include mixins.tablet {
+      img {
+        height: auto;
+      }
+    }
+  }
+  &__paso:hover {
+    transform: scale(1.2) rotate(-5deg);
+    transition: transform 300ms ease-in-out;
+  }
+  &__paso:last-child {
+    margin-bottom: 2rem;
+  }
+}
