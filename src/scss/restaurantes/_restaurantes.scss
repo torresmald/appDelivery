@@ -13,10 +13,11 @@
         border-radius: 2rem;
         padding: 3rem;
         margin-bottom: 4rem;
+        box-shadow: 0px 0px 2.6rem -0.8rem darken(variables.$grisClaro, 40%);
     }
     &__imagen{
-        width: 30%;
         margin: auto;
+        max-width: 30rem;
     }
     &__texto{
         padding: 2rem;
@@ -39,10 +40,10 @@
         }
         &__restaurante{
             margin: 0;
-            display: flex;
-        }
-        &__imagen{
-            width: auto;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 4rem;
+            align-items: center;
         }
         &__texto{
             text-align: left;

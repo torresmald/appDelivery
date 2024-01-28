@@ -1,0 +1,54 @@
+@use "base/variables";
+@use "base/mixins";
+.descarga {
+  background-color: variables.$grisClaro;
+  padding: 5rem 0;
+  &__grid {
+    @include mixins.tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+  }
+  &__imagen {
+    width: 60%;
+    margin: auto;
+    @include mixins.tablet { 
+        width: 60%;
+    }
+  }
+  &__imagen:hover {
+    transform: scale(1.1) rotate(-5deg);
+    transition: all ease-in 300ms;
+  }
+  &__texto {
+    margin-top: 5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    h3 {
+      color: variables.$secundario;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  &__logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 30%;
+    margin: auto;
+    @include mixins.tablet {
+      flex-direction: row; 
+      width: 40%;
+    }
+    img:hover{
+        transform: scale(1.1) rotate(-5deg);
+        transition: all ease-in 300ms;
+    }
+  }
+}

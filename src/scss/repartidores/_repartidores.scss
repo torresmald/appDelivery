@@ -1,0 +1,51 @@
+@use "base/variables";
+@use "base/mixins";
+
+.repartidores {
+  background-color: variables.$blanco;
+  &__contenido {
+    padding: 5rem;
+  }
+  &__heading {
+    text-align: center;
+    color: variables.$secundario;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    @include mixins.tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: unset;
+      gap: 2rem;
+    }
+  }
+  &__imagen {
+    background-image: url("../img/repartidor.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    grid-row: 1/2;
+    @include mixins.tablet { 
+        grid-row: unset;
+        grid-column: 1/2;
+    }
+  }
+  &__texto {
+    grid-row: 2/3;
+    @include mixins.tablet { 
+        grid-column: 2/3;
+        grid-row: unset;
+    }
+    p {
+      font-size: 2rem;
+      line-height: 1;
+    }
+    button {
+      @include mixins.boton(variables.$primario, variables.$blanco);
+      @include mixins.tablet { 
+        width: 50%;
+      }
+    }
+  }
+}
